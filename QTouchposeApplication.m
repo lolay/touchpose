@@ -234,6 +234,7 @@ static void UIWindow_new_didAddSubview(UIWindow *window, SEL _cmd, UIView *view)
         {
             if (fingerView == NULL)
             {
+				DLog(@"point=%@", NSStringFromCGPoint(point));
                 fingerView = [[QTouchposeFingerView alloc] initWithPoint:point borderColor:self.borderColor backgroundColor:self.backgroundColor];
                 [_touchView addSubview:fingerView];
                 CFDictionarySetValue(_touchDictionary, (__bridge const void *)(touch), (__bridge const void *)(fingerView));
